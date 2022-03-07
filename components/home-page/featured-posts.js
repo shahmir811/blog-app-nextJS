@@ -1,7 +1,13 @@
-import React from 'react';
+import PostsGrid from '../post/posts-grid';
+import classes from './featured-posts.module.css';
 
-const FeaturedPosts = () => {
-	return <p>This is a FeaturedPosts component</p>;
-};
+function FeaturedPosts(props) {
+	return (
+		<section className={classes.latest}>
+			<h2>Featured Posts</h2>
+			<PostsGrid posts={props.posts} />
+		</section>
+	);
+}
 
 export default FeaturedPosts;
