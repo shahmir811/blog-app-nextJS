@@ -1,11 +1,19 @@
 import React from 'react';
+import AllPosts from '../../components/post/all-posts';
+import { getFeaturedPosts } from '../../lib/posts-util';
 
-const AllPostsPage = () => {
-	return (
-		<div>
-			<h2>AllPostsPage</h2>
-		</div>
-	);
+const AllPostsPage = props => {
+	return <AllPosts posts={props.posts} />;
 };
+
+export function getStaticProps() {
+	const featuredPosts = getFeaturedPosts();
+
+	return {
+		props: {
+			posts: featuredPosts,
+		},
+	};
+}
 
 export default AllPostsPage;
