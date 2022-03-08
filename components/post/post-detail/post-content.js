@@ -12,7 +12,7 @@ function PostContent(props) {
 	const imagePath = `/images/posts/${post.slug}/${post.image}`;
 
 	const customRenderers = {
-		// img(image) {
+		// image(image) {
 		//   return (
 		//     <Image
 		//       src={`/images/posts/${post.slug}/${image.src}`}
@@ -22,10 +22,10 @@ function PostContent(props) {
 		//     />
 		//   );
 		// },
-		p(paragraph) {
+		paragraph(paragraph) {
 			const { node } = paragraph;
 
-			if (node.children[0].tagName === 'img') {
+			if (node.children[0].type === 'image') {
 				const image = node.children[0];
 
 				return (
@@ -39,16 +39,15 @@ function PostContent(props) {
 		},
 
 		code(code) {
-			const { className, children } = code;
-			const language = className.split('-')[1]; // className is something like language-js => We need the "js" part here
-			return <SyntaxHighlighter style={atomDark} language={language} children={children} />;
+			const { language, value } = code;
+			return <SyntaxHighlighter style={atomDark} language={language} children={value} />;
 		},
 	};
 
 	return (
 		<article className={classes.content}>
 			<PostHeader title={post.title} image={imagePath} />
-			<ReactMarkdown components={customRenderers}>{post.content}</ReactMarkdown>
+			<ReactMarkdown renderers={customRenderers}>{post.content}</ReactMarkdown>
 		</article>
 	);
 }
