@@ -38,3 +38,15 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## NPM Packages used
+
+- [Gray Matter] - Parse front-matter from a string or file. Fast, reliable and easy to use. Parses YAML front matter by default, but also has support for YAML, JSON, TOML or Coffee Front-Matter, with options to set custom delimiters. Used by metalsmith, assemble, verb and many other projects.
+- [MongoDb] - The official MongoDB driver for NodeJS
+- [React Markdown] - React component to render markdown.
+- [React Syntax Highlighter] - Syntax highlighting component for react for prismjs or highlightjs asr using inline styles.
+
+[gray matter]: https://www.npmjs.com/package/gray-matter
+[mongodb]: https://www.npmjs.com/package/mongodb
+[react markdown]: https://www.npmjs.com/package/react-markdown
+[react syntax highlighter]: https://www.npmjs.com/package/react-syntax-highlighter
