@@ -1,13 +1,22 @@
 import React from 'react';
+import Head from 'next/head';
 import AllPosts from '../../components/post/all-posts';
-import { getFeaturedPosts } from '../../lib/posts-util';
+import { getAllPosts } from '../../lib/posts-util';
 
 const AllPostsPage = props => {
-	return <AllPosts posts={props.posts} />;
+	return (
+		<>
+			<Head>
+				<title>All Posts</title>
+				<meta name='description' content='List of all programming-related posts' />
+			</Head>
+			<AllPosts posts={props.posts} />
+		</>
+	);
 };
 
 export function getStaticProps() {
-	const featuredPosts = getFeaturedPosts();
+	const featuredPosts = getAllPosts();
 
 	return {
 		props: {

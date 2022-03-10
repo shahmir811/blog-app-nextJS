@@ -1,4 +1,5 @@
 import React from 'react';
+import Head from 'next/head';
 
 import FeaturedPosts from '../components/home-page/featured-posts';
 import Hero from '../components/home-page/hero';
@@ -8,6 +9,10 @@ const HomePage = props => {
 	return (
 		<>
 			<Hero />
+			<Head>
+				<title>Shah's Blog</title>
+				<meta name='description' content='Writing posts about programming and  web development' />
+			</Head>
 			<FeaturedPosts posts={props.posts} />
 		</>
 	);
